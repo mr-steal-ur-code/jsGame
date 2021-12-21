@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc index.ts --watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mr-steal-ur-code/jsGame/issues"
   },
-  "homepage": "https://github.com/mr-steal-ur-code/jsGame#readme"
+  "homepage": "https://github.com/mr-steal-ur-code/jsGame#readme",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
 }
