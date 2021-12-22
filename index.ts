@@ -13,7 +13,7 @@ const catData: (number | string)[] = [
     0,
 ];
 
-const catNames: string[] = [catData.filter((name => name === "string")];
+const catNames: string[] = [catData.filter(name => name === "string")];
 const catAges: number[] = [];
 
 
