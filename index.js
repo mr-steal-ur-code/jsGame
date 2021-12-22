@@ -6,7 +6,7 @@ const catData: (number | string)[] = [
   "Scooter",
   2,
   "Wilson",
-  1,
+    1,
   "Jeremy",
   11,
   "Alphonse",
