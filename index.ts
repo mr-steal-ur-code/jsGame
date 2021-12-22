@@ -13,11 +13,9 @@ const catData: (number | string)[] = [
     0,
 ];
 
-const catNames = catData.
-    filter((animal) => {animal === "string"});
+const catNames: string[] = [catData.filter((name => name === "string")];
+const catAges: number[] = [];
 
-const catAges = catData.
-    filter((catAge) => {catAge === int});
 
 console.log("Names: ", catNames);
 console.log("Ages: ", catAges);
@@ -27,5 +25,5 @@ document.body.innerHTML = `
                                   ${catNames
         .map((name, index) => `<li>${name} - ${catAges[index]}</li>`)
         .join("")}
-                                                </ul>
-]
+                                                </ul>`
+                                  
