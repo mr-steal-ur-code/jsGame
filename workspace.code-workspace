@@ -16,15 +16,15 @@
 			"activityBarBadge.background": "#fbff00",
 			"activityBarBadge.foreground": "#000000",
 			"sash.hoverBorder": "#e5e5f3",
-			"statusBar.background": "#197702",
+			"statusBar.background": "#115201",
 			"statusBar.foreground": "#000000",
 			"statusBarItem.hoverBackground": "#fbff00",
 			"statusBarItem.remoteBackground": "#ff8800",
 			"statusBarItem.remoteForeground": "#000000",
-			"titleBar.activeBackground": "#197702",
+			"titleBar.activeBackground": "#115201",
 			"titleBar.activeForeground": "#000000",
-			"titleBar.inactiveBackground": "#dd242499",
-			"titleBar.inactiveForeground": "#83070799"
+			"titleBar.inactiveBackground": "#46444499",
+			"titleBar.inactiveForeground": "#00000099"
 		}
 	}
 }
