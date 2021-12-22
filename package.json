@@ -19,5 +19,8 @@
   "homepage": "https://github.com/mr-steal-ur-code/jsGame#readme",
   "devDependencies": {
     "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@stencil/core": "2.12.0"
   }
 }
