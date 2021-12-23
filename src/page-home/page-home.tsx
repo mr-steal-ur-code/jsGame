@@ -9,7 +9,14 @@ export class PageHome {
     
     render() {
         return (
-            <p>My name is Stencil</p>
+            <div id="stickman">
+            <div class="leg1"></div>
+            <div class="leg2"></div>
+            <div class="arm1"></div>
+            <div class="arm2"></div>
+            <div class="head"></div>
+            <div class="body"></div>
+        </div>
         );
     }
 }

@@ -1,13 +1,13 @@
-import { r as registerInstance, h } from './index-e0f2a7e6.js';
+import { r as registerInstance, h } from './index-7a925a62.js';
 
-const pageHomeCss = "page-home p{font-size:50px}";
+const pageHomeCss = ":root{--stick-color:black}#stickman:hover{cursor:none}#stickman .leg1{position:relative;top:380px;left:112px;height:20px;width:100px;background:var(--stick-color);transform:rotate(50deg)}#stickman .leg2{position:relative;top:360px;left:38px;height:20px;width:90px;background:var(--stick-color);transform:rotate(125deg)}#stickman .body{position:relative;top:-200px;left:50px;height:40px;width:140px;background:var(--stick-color);transform:rotate(90deg)}#stickman .arm1{position:relative;top:200px;left:130px;height:15px;width:100px;background:var(--stick-color);transform:rotate(50deg);animation:wave2 1s alternate infinite ease-in-out;transform-origin:0%}#stickman .head:before,#stickman .head:after{content:\"\";position:absolute;top:30px;height:25px;width:8px;background:white;border-radius:100%}#stickman .head:before{left:35px}#stickman .head:after{right:35px;animation:wink 3s infinite}@keyframes wink{0%{height:20px}9%{margin-top:5px;height:0px}18%{margin-top:0;height:20px}}@keyframes wave2{0%{transform:rotate(-45deg)}100%{transform:rotate(0deg)}}#stickman .arm2{position:relative;top:213px;left:30px;height:15px;width:100px;background:black;transform:rotate(130deg)}#stickman .head{background-color:black;border-radius:100px;padding:60px;margin:140px;width:5px;position:relative;top:-105px;left:-82px}#stickman{height:300px;width:300px;top:-90px;margin-left:10%;position:relative;transform-origin:0% 0%;animation:jump 0.7s ease-in infinite}@keyframes jump{0%{transform:translate3d(0, 0, 0) scale3d(1, 1, 1)}35%{transform:translate3d(0, 0, 0) scale3d(1, 1.1, 1)}100%{transform:translate3d(0, 0, 0) scale3d(1, 1, 1)}}";
 
 let PageHome = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
   }
   render() {
-    return (h("p", null, "My name is Stencil"));
+    return (h("div", { id: "stickman" }, h("div", { class: "leg1" }), h("div", { class: "leg2" }), h("div", { class: "arm1" }), h("div", { class: "arm2" }), h("div", { class: "head" }), h("div", { class: "body" })));
   }
 };
 PageHome.style = pageHomeCss;
