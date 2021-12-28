@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Listen, Prop, State, } from '@stencil/core';
 
 
 @Component({
@@ -6,17 +6,49 @@ import { Component, h } from '@stencil/core';
     styleUrl: 'page-home.css'
 })
 export class PageHome {
-    
-    render() {
-        return (
-            <div id="stickman">
-            <div class="leg1"></div>
-            <div class="leg2"></div>
-            <div class="arm1"></div>
-            <div class="arm2"></div>
-            <div class="head"></div>
-            <div class="body"></div>
-        </div>
-        );
+    stickmanEl: any;
+
+    @Prop() color = "#f50000"
+
+    @State() isWinking = false;
+
+    @Listen("input")
+    onInput(event) {
+        console.log(event);
+
     }
+
+    @Listen("keydown", { target: "window" })
+    onKeydown(event) {
+        if (event.code === "Space") {
+            if (!this.isWinking) {
+                this.isWinking = true;
+            }
+            setTimeout(() => {
+                this.isWinking = false;
+            }, 500);
+        }
+    
+        render() ;
+            return [
+                <div
+                    id="stickman"
+                    class={{
+                        "wink-animation": this.isWinking
+                    }}
+                    ref={(el) => this.stickmanEl = el}
+                    style={{
+                        "--stick-color": this.color,
+                    }}
+                >
+                   
+                    <div class="leg1"></div>
+                    <div class="leg2"></div>
+                    <div class="arm1"></div>
+                    <div class="arm2"></div>
+                    <div class="head"></div>
+                    <div class="body"></div>
+                </div>
+    ];
+  }
 }

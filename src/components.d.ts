@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface PageHome {
+        "color": string;
     }
 }
 declare global {
@@ -22,6 +23,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface PageHome {
+        "color"?: string;
     }
     interface IntrinsicElements {
         "page-home": PageHome;
