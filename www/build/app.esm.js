@@ -1,4 +1,4 @@
-import { B as BUILD, c as consoleDevInfo, p as plt, w as win, H, d as doc, N as NAMESPACE, a as promiseResolve, b as bootstrapLazy } from './index-e73f1df9.js';
+import { B as BUILD, c as consoleDevInfo, p as plt, w as win, H, d as doc, N as NAMESPACE, a as promiseResolve, b as bootstrapLazy } from './index-fedadd70.js';
 import { g as globalScripts } from './app-globals-0f993ce5.js';
 
 /*
@@ -121,5 +121,5 @@ const patchCloneNodeFix = (HTMLElementPrototype) => {
 
 patchBrowser().then(options => {
   globalScripts();
-  return bootstrapLazy([["page-home",[[0,"page-home",null,[[0,"input","onInput"],[8,"keydown","onKeydown"]]]]]], options);
+  return bootstrapLazy([["tank-1",[[0,"tank-1",{"x":[32],"y":[32]},[[16,"keydown","onKeydown"]]]]],["page-home",[[0,"page-home"]]]], options);
 });

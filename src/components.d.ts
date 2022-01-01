@@ -7,7 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface PageHome {
-        "color": string;
+    }
+    interface Tank1 {
     }
 }
 declare global {
@@ -17,16 +18,25 @@ declare global {
         prototype: HTMLPageHomeElement;
         new (): HTMLPageHomeElement;
     };
+    interface HTMLTank1Element extends Components.Tank1, HTMLStencilElement {
+    }
+    var HTMLTank1Element: {
+        prototype: HTMLTank1Element;
+        new (): HTMLTank1Element;
+    };
     interface HTMLElementTagNameMap {
         "page-home": HTMLPageHomeElement;
+        "tank-1": HTMLTank1Element;
     }
 }
 declare namespace LocalJSX {
     interface PageHome {
-        "color"?: string;
+    }
+    interface Tank1 {
     }
     interface IntrinsicElements {
         "page-home": PageHome;
+        "tank-1": Tank1;
     }
 }
 export { LocalJSX as JSX };
@@ -34,6 +44,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
+            "tank-1": LocalJSX.Tank1 & JSXBase.HTMLAttributes<HTMLTank1Element>;
         }
     }
 }

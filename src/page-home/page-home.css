@@ -60,7 +60,11 @@
   }
   #stickman .head:after {
     right: 35px;
-    /* animation: wink 3s infinite; */
+    animation: wink 3s;
+  }
+
+  .wink-animation {
+    animation: wink 2s;
   }
   
   @keyframes wink {
