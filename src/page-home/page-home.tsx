@@ -1,5 +1,5 @@
 import { Component, h, Listen, Prop, State, } from '@stencil/core';
-import Tank from './models/tank';
+// import Tank from './models/tank';
 
 
 @Component({
@@ -26,9 +26,9 @@ export class PageHome {
     //     }
     // }
 
-        componentDidLoad() {
-          new Tank();
-        }
+        // componentDidLoad() {
+        //   new Tank();
+      
 
         render() {
             return [

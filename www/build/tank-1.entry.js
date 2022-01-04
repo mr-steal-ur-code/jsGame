@@ -1,6 +1,6 @@
-import { r as registerInstance, h } from './index-fedadd70.js';
+import { r as registerInstance, h } from './index-db708e0d.js';
 
-const tank1Css = ":host{display:block}";
+const tank1Css = ":host{display:block}.bullet{position:absolute;top:0;left:0;display:block;height:10px;width:10px;border-radius:100%;transition:1s ease-in left;background:blue}";
 
 let Tank1 = class {
   constructor(hostRef) {
@@ -28,6 +28,9 @@ let Tank1 = class {
       this.setOrientation(90);
       this.move(this.movementSpeed, 0);
     }
+    else if (event.key === " ") {
+      this.fire();
+    }
   }
   setOrientation(degrees) {
     this.orientation = degrees;
@@ -38,6 +41,13 @@ let Tank1 = class {
     this.x = this.x + x;
     this.y = this.y + y;
     return this;
+  }
+  fire() {
+    const bulletEl = document.createElement("span");
+    bulletEl.classList.add("bullet");
+    bulletEl.style.top = `${this.y}px`;
+    bulletEl.style.left = `${this.x}px`;
+    document.body.append(bulletEl);
   }
   render() {
     return (h("span", { ref: (el) => this.el = el, style: {

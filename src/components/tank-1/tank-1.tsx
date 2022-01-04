@@ -26,6 +26,8 @@ export class Tank1 {
     } else if (event.key === "ArrowRight") {
       this.setOrientation(90);
       this.move(this.movementSpeed, 0);
+    }else if (event.key === " ") {
+      this.fire();
     }
   }
 
@@ -41,6 +43,16 @@ export class Tank1 {
     this.y = this.y + y;
 
     return this;
+  }
+
+  fire() {
+    const bulletEl = document.createElement("span");
+    bulletEl.classList.add("bullet");
+    bulletEl.style.top = `${this.y}px`;
+    bulletEl.style.left = `${this.x}px`;
+    document.body.append(bulletEl);
+
+  
   }
 
 
