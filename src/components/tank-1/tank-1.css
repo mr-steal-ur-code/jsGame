@@ -3,13 +3,67 @@
 }
 
 .bullet {
+  transition: all ease-out 0.5s;
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   height: 10px;
-  width: 13px;
-  border-bottom-right-radius: 70%;
-  border-top-right-radius: 70%;
+  width: 10px;
+  border-radius: 100%;
   background: blue;
+}
+
+.spec {
+  transition: all ease-out 1.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: red;
+}
+
+.move-down {
+  top: 850px !important;
+}
+
+.move-up {
+  top: -200px !important;
+}
+
+.move-left {
+  left: -200px !important;
+}
+
+.move-right {
+  left: 1050px !important;
+}
+
+.map {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 600px;
+  width: 800px;
+  background-color: grey;
+  overflow: hidden;
+}
+
+.scoreboard {
+  padding: 30px;
+  font-size: 62px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.scoreboard span:first-of-type {
+  color: red;
+}
+
+.scoreboard span:last-of-type {
+  color: blue;
 }

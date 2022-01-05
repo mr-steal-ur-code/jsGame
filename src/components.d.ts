@@ -9,6 +9,8 @@ export namespace Components {
     interface PageHome {
     }
     interface Tank1 {
+        "x": number;
+        "y": number;
     }
 }
 declare global {
@@ -33,6 +35,8 @@ declare namespace LocalJSX {
     interface PageHome {
     }
     interface Tank1 {
+        "x"?: number;
+        "y"?: number;
     }
     interface IntrinsicElements {
         "page-home": PageHome;
