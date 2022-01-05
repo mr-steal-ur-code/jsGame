@@ -1,6 +1,6 @@
 import { r as registerInstance, h } from './index-db708e0d.js';
 
-const tank1Css = ":host{display:block}.bullet{position:absolute;top:0;left:0;display:block;height:10px;width:10px;border-radius:100%;transition:1s ease-in left;background:blue}";
+const tank1Css = ":host{display:block}.bullet{position:absolute;top:0;left:0;display:block;height:10px;width:13px;border-bottom-right-radius:70%;border-top-right-radius:70%;background:blue}";
 
 let Tank1 = class {
   constructor(hostRef) {

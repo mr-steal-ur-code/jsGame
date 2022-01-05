@@ -8,8 +8,8 @@
   left: 0;
   display: block;
   height: 10px;
-  width: 10px;
-  border-radius: 100%;
-  transition: 1s ease-in left;
+  width: 13px;
+  border-bottom-right-radius: 70%;
+  border-top-right-radius: 70%;
   background: blue;
 }
