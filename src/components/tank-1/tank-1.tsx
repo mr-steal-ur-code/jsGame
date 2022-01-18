@@ -1,4 +1,4 @@
-import { Component, h, Listen, State, Prop } from '@stencil/core';
+import { Component, h, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'tank-1',

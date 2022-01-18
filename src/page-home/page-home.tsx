@@ -1,4 +1,4 @@
-import { Component, h, Listen, Prop, State, } from '@stencil/core';
+import { Component, h, State, } from '@stencil/core';
 // import Tank from './models/tank';
 
 
