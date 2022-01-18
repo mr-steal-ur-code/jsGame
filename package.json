@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/mr-steal-ur-code/jsGame#readme",
   "devDependencies": {
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "workbox-build": "^4.3.1"
   },
   "dependencies": {
     "@stencil/core": "2.12.0"
