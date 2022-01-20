@@ -1,12 +1,7 @@
 import { Component, h, State, Listen } from "@stencil/core";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut,
-} from "firebase/auth";
+import {getAuth, signInWithPopup, GoogleAuthProvider, signOut, } from "firebase/auth";
 
 @Component({
   tag: "page-home",
