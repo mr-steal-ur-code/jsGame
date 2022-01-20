@@ -36,6 +36,23 @@
   overflow: hidden;
 }
 
+.move-down {
+  top: 850px !important;
+}
+
+.move-up {
+  top: -200px !important;
+}
+
+.move-left {
+  left: -200px !important;
+}
+
+.move-right {
+  left: 1050px !important;
+}
+
+
 .scoreboard {
   padding: 30px;
   font-size: 62px;

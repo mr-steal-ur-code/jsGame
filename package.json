@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "firebase deploy --only hosting",
     "test": "echo \"Error: no test specified\" && exit 1",
     "g": "stencil generate",
     "build": "stencil build",
