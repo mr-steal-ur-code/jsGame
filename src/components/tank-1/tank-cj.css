@@ -67,3 +67,11 @@
 .scoreboard span:last-of-type {
   color: blue;
 }
+
+.obstacle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: rgba(165, 42, 42, 0.363);
+}

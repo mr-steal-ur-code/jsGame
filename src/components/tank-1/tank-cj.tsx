@@ -1,34 +1,36 @@
-import { Component, h, Listen, Prop } from '@stencil/core';
+import { Component, h, Listen, Prop, State, Method } from '@stencil/core';
 
 @Component({
-  tag: 'tank-1',
-  styleUrl: 'tank-1.css',
+  tag: 'tank-cj',
+  styleUrl: 'tank-cj.css',
 })
 export class Tank1 {
   movementSpeed = 15;
   el = null;
   orientation = 0;
-
   @Prop({ mutable: true }) x = 0;
   @Prop({ mutable: true }) y = 0;
+  @Prop({ mutable: true }) size = 60;
+  @State() opacity = "1";
+  @State() isBlocked = false;
 
-  @Listen("keydown", { target: "body"})
+  @Listen("keydown", { target: "body" })
   onKeydown(event) {
-    if (event.key === "ArrowUp") {
+    if (event.key === "w" && !(this.isBlocked && this.orientation === 0)) {
       this.setOrientation(0);
       this.move(0, -this.movementSpeed);
-    } else if (event.key === "ArrowDown") {
+    } else if (event.key === "s" && !(this.isBlocked && this.orientation === 180)) {
       this.setOrientation(180);
       this.move(0, this.movementSpeed);
-    } else if (event.key === "ArrowLeft") {
+    } else if (event.key === "a" && !(this.isBlocked && this.orientation === 270)) {
       this.setOrientation(270);
       this.move(-this.movementSpeed, 0);
-    } else if (event.key === "ArrowRight") {
+    } else if (event.key === "d" && !(this.isBlocked && this.orientation === 90)) {
       this.setOrientation(90);
       this.move(this.movementSpeed, 0);
-    }else if (event.key === " ") {
+    } else if (event.key === " ") {
       this.fire();
-    }else if (event.key === "q") {
+    } else if (event.key === "q") {
       this.special();
     }
   }
@@ -43,6 +45,7 @@ export class Tank1 {
   move(x, y) {
     this.x = this.x + x;
     this.y = this.y + y;
+    this.isBlocked = false;
 
     return this;
   }
@@ -88,6 +91,20 @@ export class Tank1 {
     lazerEl.style.left = `${this.x}px`;
     document.querySelector(".map").append(lazerEl);
   }
+  
+  @Method()
+  async isColliding(blocked: boolean) {
+    this.isBlocked = blocked;
+  }
+
+  @Method()
+  async isHit() {
+    // Make tank flash
+    this.opacity = "0";
+    setTimeout(() => {
+      this.opacity = "1";
+    }, 400);
+  }
 
 
 
@@ -96,6 +113,7 @@ export class Tank1 {
       <span 
       ref={(el) => this.el = el}
       style={{
+        opacity: this.opacity,
         position: "absolute",
         transition: ".3s linear all",
         background: "url('http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/3ec6486c3f26301.png') center center / cover no-repeat",

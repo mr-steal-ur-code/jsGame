@@ -8,7 +8,17 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface PageHome {
     }
-    interface Tank1 {
+    interface StickTank {
+        "isColliding": (blocked: boolean) => Promise<void>;
+        "isHit": () => Promise<void>;
+        "size": number;
+        "x": number;
+        "y": number;
+    }
+    interface TankCj {
+        "isColliding": (blocked: boolean) => Promise<void>;
+        "isHit": () => Promise<void>;
+        "size": number;
         "x": number;
         "y": number;
     }
@@ -20,27 +30,41 @@ declare global {
         prototype: HTMLPageHomeElement;
         new (): HTMLPageHomeElement;
     };
-    interface HTMLTank1Element extends Components.Tank1, HTMLStencilElement {
+    interface HTMLStickTankElement extends Components.StickTank, HTMLStencilElement {
     }
-    var HTMLTank1Element: {
-        prototype: HTMLTank1Element;
-        new (): HTMLTank1Element;
+    var HTMLStickTankElement: {
+        prototype: HTMLStickTankElement;
+        new (): HTMLStickTankElement;
+    };
+    interface HTMLTankCjElement extends Components.TankCj, HTMLStencilElement {
+    }
+    var HTMLTankCjElement: {
+        prototype: HTMLTankCjElement;
+        new (): HTMLTankCjElement;
     };
     interface HTMLElementTagNameMap {
         "page-home": HTMLPageHomeElement;
-        "tank-1": HTMLTank1Element;
+        "stick-tank": HTMLStickTankElement;
+        "tank-cj": HTMLTankCjElement;
     }
 }
 declare namespace LocalJSX {
     interface PageHome {
     }
-    interface Tank1 {
+    interface StickTank {
+        "size"?: number;
+        "x"?: number;
+        "y"?: number;
+    }
+    interface TankCj {
+        "size"?: number;
         "x"?: number;
         "y"?: number;
     }
     interface IntrinsicElements {
         "page-home": PageHome;
-        "tank-1": Tank1;
+        "stick-tank": StickTank;
+        "tank-cj": TankCj;
     }
 }
 export { LocalJSX as JSX };
@@ -48,7 +72,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
-            "tank-1": LocalJSX.Tank1 & JSXBase.HTMLAttributes<HTMLTank1Element>;
+            "stick-tank": LocalJSX.StickTank & JSXBase.HTMLAttributes<HTMLStickTankElement>;
+            "tank-cj": LocalJSX.TankCj & JSXBase.HTMLAttributes<HTMLTankCjElement>;
         }
     }
 }

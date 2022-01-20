@@ -86,7 +86,7 @@ this.app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(this.app);
 this.auth = getAuth(this.app);
 
-
+console.log(this.app, analytics);
 this.gameLoop = setInterval(() => {
 
     // 1. Get all the bullets on the board
@@ -186,7 +186,18 @@ this.gameLoop = setInterval(() => {
         </div>,
         <div class="map">
             <stick-tank ref={(p1) => this.p1 = p1} />
-            <tank-1 ref={(p2) => this.p2 = p2} />
+            <tank-cj ref={(p2) => this.p2 = p2} />
+            {this.obstacles.map(obstacle => obstacle.health > 0 &&
+                    <span
+                        class="obstacle"
+                        style={{
+                            height: `${obstacle.size}px`,
+                            width: `${obstacle.size}px`,
+                            left: `${obstacle.x}px`,
+                            top: `${obstacle.y}px`,
+                        }}
+                    />
+                )}
         </div>
                     
   ];

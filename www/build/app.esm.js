@@ -1,4 +1,4 @@
-import { B as BUILD, c as consoleDevInfo, p as plt, w as win, H, d as doc, N as NAMESPACE, a as promiseResolve, b as bootstrapLazy } from './index-4c81115a.js';
+import { B as BUILD, c as consoleDevInfo, p as plt, w as win, H, d as doc, N as NAMESPACE, a as promiseResolve, b as bootstrapLazy } from './index-ad1d14b2.js';
 import { g as globalScripts } from './app-globals-0f993ce5.js';
 
 /*
@@ -121,5 +121,5 @@ const patchCloneNodeFix = (HTMLElementPrototype) => {
 
 patchBrowser().then(options => {
   globalScripts();
-  return bootstrapLazy([["tank-1",[[0,"tank-1",{"x":[1026],"y":[1026]},[[16,"keydown","onKeydown"]]]]],["page-home",[[0,"page-home",{"p1Score":[32],"p2Score":[32],"obstacles":[32],"isLoggedIn":[32]},[[0,"submit","onSubmit"]]]]]], options);
+  return bootstrapLazy([["stick-tank",[[0,"stick-tank",{"size":[1026],"x":[1026],"y":[1026],"opacity":[32],"isBlocked":[32],"isColliding":[64],"isHit":[64]},[[16,"keydown","onKeydown"]]]]],["tank-cj",[[0,"tank-cj",{"x":[1026],"y":[1026],"size":[1026],"opacity":[32],"isBlocked":[32],"isColliding":[64],"isHit":[64]},[[16,"keydown","onKeydown"]]]]],["page-home",[[0,"page-home",{"p1Score":[32],"p2Score":[32],"obstacles":[32],"isLoggedIn":[32]},[[0,"submit","onSubmit"]]]]]], options);
 });

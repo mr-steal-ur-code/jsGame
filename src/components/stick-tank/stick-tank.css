@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+
+.bullet.bullet-stick {
+  background: red;
+}
