@@ -10,16 +10,6 @@
 </head>
 <body style="overflow: hidden">
     <page-home color="#f50000"></page-home>
-</script> <script>
-    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-      // auto-unregister service worker during dev mode
-      navigator.serviceWorker.getRegistration().then(function(registration) {
-      if (registration) {
-        registration.unregister().then(function() { location.reload(true) });
-      }
-      });
-    }
-    </script>
     
 </body>
 </html>
