@@ -1,6 +1,6 @@
 import { r as registerInstance, h } from './index-ad1d14b2.js';
 
-const stickTankCss = ":host{display:block}";
+const stickTankCss = ":host{display:block}.bullet.bullet-stick{background:red}";
 
 let StickTank = class {
   constructor(hostRef) {
