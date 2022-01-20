@@ -15295,13 +15295,13 @@ let PageHome = class {
     return (el === null || el === void 0 ? void 0 : el.size) || (el === null || el === void 0 ? void 0 : el.offsetWidth) || (el === null || el === void 0 ? void 0 : el.offsetHeight);
   }
   isColliding(a, b) {
-    return a.x < b.x + this.getSize(b) &&
+    return (a.x < b.x + this.getSize(b) &&
       a.x + this.getSize(a) > b.x &&
       a.y < b.y + this.getSize(b) &&
-      this.getSize(a) + a.y > b.y;
+      this.getSize(a) + a.y > b.y);
   }
   signInWithGoogle() {
-    const provider = new GoogleAuthProvider;
+    const provider = new GoogleAuthProvider();
     signInWithPopup(this.auth, provider)
       .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -15311,7 +15311,8 @@ let PageHome = class {
       const user = result.user;
       console.log(user);
       // ...
-    }).catch((error) => {
+    })
+      .catch((error) => {
       console.log(error);
       // Handle Errors here.
       const errorCode = error.code;
@@ -15336,7 +15337,7 @@ let PageHome = class {
       storageBucket: "cj-tank-game.appspot.com",
       messagingSenderId: "63758923627",
       appId: "1:63758923627:web:d3474be898b19186593e2e",
-      measurementId: "G-8VQCCHE2J4"
+      measurementId: "G-8VQCCHE2J4",
     };
     // Initialize Firebase
     this.app = initializeApp(firebaseConfig);
@@ -15351,16 +15352,20 @@ let PageHome = class {
         // console.log(this.p1.x, bullet.offsetLeft, bullet.classList);
         // 3. See if it intersects a tank
         // P1 HIT LOGIC
-        if (bullet.offsetLeft > this.p1.x && bullet.offsetLeft < this.p1.x + 60
-          && bullet.offsetTop > this.p1.y && bullet.offsetTop < this.p1.y + 60
-          && !bullet.classList.contains("bullet-stick")) {
+        if (bullet.offsetLeft > this.p1.x &&
+          bullet.offsetLeft < this.p1.x + 60 &&
+          bullet.offsetTop > this.p1.y &&
+          bullet.offsetTop < this.p1.y + 60 &&
+          !bullet.classList.contains("bullet-stick")) {
           this.p2Score = this.p2Score + 1;
           this.p1.isHit();
         }
         // P2 HIT LOGIC
-        if (bullet.offsetLeft > this.p2.x && bullet.offsetLeft < this.p2.x + 60
-          && bullet.offsetTop > this.p2.y && bullet.offsetTop < this.p2.y + 60
-          && !bullet.classList.contains("bullet-1")) {
+        if (bullet.offsetLeft > this.p2.x &&
+          bullet.offsetLeft < this.p2.x + 60 &&
+          bullet.offsetTop > this.p2.y &&
+          bullet.offsetTop < this.p2.y + 60 &&
+          !bullet.classList.contains("bullet-1")) {
           this.p1Score = this.p1Score + 1;
           this.p2.isHit();
         }
@@ -15387,9 +15392,9 @@ let PageHome = class {
     for (let i = 0; i < 9; i++) {
       obstacles.push({
         health: 5,
-        x: (Math.random() * 700) + 100,
-        y: (Math.random() * 500) + 100,
-        size: Math.random() * 100
+        x: Math.random() * 700 + 100,
+        y: Math.random() * 500 + 100,
+        size: Math.random() * 100,
       });
     }
     this.obstacles = obstacles;
@@ -15407,14 +15412,14 @@ let PageHome = class {
   }
   render() {
     return [
-      h("div", { class: "scoreboard" }, h("button", { onClick: () => this.logout() }, "logout"), !this.isLoggedIn && h("button", { onClick: () => this.signInWithGoogle() }, "Login with Google"), h("form", null, h("input", { ref: (el) => this.emailInputEl = el, type: "email", name: "email", placeholder: "Email Address" }), h("input", { ref: (el) => this.passwordInputEl = el, type: "password", name: "password", placeholder: "Password" }), h("button", { type: "submit" }, "Login")), h("span", null, "P1: ", this.p1Score), h("span", null, "P2: ", this.p2Score)),
-      h("div", { class: "map" }, h("stick-tank", { ref: (p1) => this.p1 = p1 }), h("tank-cj", { ref: (p2) => this.p2 = p2 }), this.obstacles.map(obstacle => obstacle.health > 0 &&
-        h("span", { class: "obstacle", style: {
-            height: `${obstacle.size}px`,
-            width: `${obstacle.size}px`,
-            left: `${obstacle.x}px`,
-            top: `${obstacle.y}px`,
-          } })))
+      h("div", { class: "logins" }, h("button", { onClick: () => this.logout() }, "logout"), !this.isLoggedIn && (h("button", { onClick: () => this.signInWithGoogle() }, "Login with Google")), h("form", null, h("input", { ref: (el) => (this.emailInputEl = el), type: "email", name: "email", placeholder: "Email Address" }), h("input", { ref: (el) => (this.passwordInputEl = el), type: "password", name: "password", placeholder: "Password" }), h("button", { type: "submit" }, "Login"))),
+      h("div", { class: "scoreboard" }, h("span", null, "P1: ", this.p1Score), h("span", null, "P2: ", this.p2Score)),
+      h("div", { class: "map" }, h("stick-tank", { ref: (p1) => (this.p1 = p1) }), h("tank-cj", { ref: (p2) => (this.p2 = p2) }), this.obstacles.map((obstacle) => obstacle.health > 0 && (h("span", { class: "obstacle", style: {
+          height: `${obstacle.size}px`,
+          width: `${obstacle.size}px`,
+          left: `${obstacle.x}px`,
+          top: `${obstacle.y}px`,
+        } })))),
     ];
   }
 };

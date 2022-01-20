@@ -75,3 +75,9 @@
   display: block;
   background-color: rgba(165, 42, 42, 0.363);
 }
+
+.logins {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
